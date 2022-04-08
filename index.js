@@ -19,18 +19,17 @@ connection.connect((err) => {
       //var sql = "UPDATE students SET course = 'Art' WHERE id = 1";
 //multiple inserts belows
 var st=new Date().getTime;
-var sql="INSERT INTO students (id, name, course) VALUES?"
-var values=[['2','raj','hist'],['3','ram','geo'],
-['4','raju','sci'],['5','rakesh','maths'],['6','hitesh','sci']]      
-connection.query(sql,[values], function (err, result) {
+var sql="DELETE FROM students WHERE id = '5'"
+/*var values=[['2','raj','hist'],['3','ram','geo'],
+['4','raju','sci'],['5','rakesh','maths'],['6','hitesh','sci']]  */   
+connection.query(sql, function (err, result) {
         if (err) {
           console.log(err);
         }
         //console.log("updated");
-        console.log("added");
+        console.log("deleted");
        var ed=new Date().getTime;
-       console.log("total",(ed-st)/60);
-       console.log("added",result.affectedRows);
+       console.log("deleted successfully")
       });
 
     }
