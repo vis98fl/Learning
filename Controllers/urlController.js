@@ -60,19 +60,19 @@ class urlController{
         });
 
         app.route('/Update/:id').patch(async(req,res)=>{
-                let id=req.params.id;
-                const updates=req.body
-                //console.log("updates",updates);
-                try{
-                const updatedlongUrl=await UrlRepo.updateUrl(id,updates);
-                return res.send(updatedlongUrl)
-                }
-                catch(error){
-                    return res.send("not updated");
-                }
+            let id=req.params.id;
+            const updates=req.body
+            //console.log("updates",updates);
+            try{
+            const updatedlongUrl=await UrlRepo.updateUrl(id,updates);
+            return res.send(updatedlongUrl)
+            }
+            catch(error){
+                return res.send("not updated");
+            }
 
-        });
-        
+    });
+    
     }
 }
 

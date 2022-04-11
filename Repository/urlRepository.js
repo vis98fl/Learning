@@ -40,16 +40,18 @@ class urlRepo{
          );
     }
 
-    updateUrl(id,updates){
-        return new Promise(async(resolve,reject)=>{
-            try{
-        let longUrl=await urls.findByIdAndUpdate(id,updates,{new:true});
-         resolve(longUrl);
-            }
-            catch(error){
-                reject(error);
-            }    
-    });
+   //updated 
+ updateUrl(id,updates){
+    return new Promise(async(resolve,reject)=>{
+        try{
+    let longUrl=await urls.findByIdAndUpdate(id,updates,{new:true});
+     resolve(longUrl);
+        }
+        catch(error){
+            reject(error);
+        }    
+});
+
 
     }
            
